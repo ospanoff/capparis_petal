@@ -1,20 +1,26 @@
+import 'package:capparis_petal/models/sport.dart';
 import 'package:flutter/material.dart';
 
 class SportIcon extends StatelessWidget {
-  const SportIcon({Key? key, required this.name}) : super(key: key);
+  const SportIcon({Key? key, required this.sport}) : super(key: key);
 
-  final String name;
+  final Sport sport;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
+        Container(
           width: 50,
           height: 50,
-          child: Icon(Icons.waves),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(15)),
+            color: Color(int.parse(sport.colorHex.replaceFirst("#", "0xff"))),
+          ),
+          // TODO: Use sport.iconUrl
+          child: const Icon(Icons.sports),
         ),
-        Center(child: Text(name)),
+        Center(child: Text(sport.name)),
       ],
     );
   }

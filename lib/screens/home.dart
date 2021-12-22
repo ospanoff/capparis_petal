@@ -1,4 +1,5 @@
-import 'package:capparis_petal/widgets/sport_icon.dart';
+import 'package:capparis_petal/modules/cappers_list.dart';
+import 'package:capparis_petal/modules/sports_list.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -14,14 +15,10 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [
-            Row(
-              children: const [
-                SportIcon(name: "Sport 1"),
-                SportIcon(name: "Sport 2"),
-                SportIcon(name: "Sport 3"),
-              ],
-            )
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            SportsList(),
+            CappersList(),
           ],
         ),
       ),
